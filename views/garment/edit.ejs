@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/product/<%= product._id %>?_method=PUT" method="post">
+        <div>
+            <label for="name">Nama Product :</label>
+            <input type="text" name="name" id="name" value="<%= product.name %>">
+        </div>
+        <div>
+            <label for="brand">Brand Product: </label>
+            <input type="text" name="brand" id="brand" value="<%= product.brand %>">
+        </div>
+        <div>
+            <label for="price">Price Product: </label>
+            <input type="number" name="price" id="price" value="<%= product.price %>">
+        </div>
+        <div>
+            <label for="color">Color Product: </label>
+            <input type="text" name="color" id="color" value="<%= product.color %>">
+        </div>
+        <div>
+            <label for="size">Size Product: </label>
+                <select name="size" id="size" name="size">
+                    <option value="S" <%= product.size == "S" ? 'selected' : '' %>>S</option>
+                    <option value="M" <%= product.size == "M" ? 'selected' : '' %>>M</option>
+                    <option value="L" <%= product.size == "L" ? 'selected' : '' %>>L</option>
+                    <option value="XL" <%= product.size == "XL" ? 'selected' : '' %>>XL</option>
+                </select>
+        </div>
+        <div>
+            <label for="stock">Stock Product: </label>
+            <input type="number" name="stock" id="stock" value="<%= product.stock %>">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        <a href="/product">Back</a>
+    </div>
+</body>
+</html>

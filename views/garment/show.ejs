@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Produk <%= garment.name %></h1>
+    <p>Location: <%= garment.location %></p>
+    <p>Kontak: <%= garment.contact %></p>
+    <br>
+    <a href="/garment/<%= garment._id %>/edit">
+        Edit
+    </a>
+    <br>
+
+    <% if (garment.product.length > 0) { %>
+        <h3>Product Parbik</h3>
+        <ul>
+            <% garment.product.forEach(product => { %>
+                <li>
+                    <a href="/product/<%= product._id %>">
+                        <%= product.name %> - <%= product.brand%>
+                    </a>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+
+    <a href="/garment">Back</a>
+    <br>
+    <form action="/garment/<%= garment._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+    <a href="/garment/<%= garment._id %>/product/create">Add Product</a>
+</body>
+</html>

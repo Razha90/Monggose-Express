@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/garment/<%=garment_id%>/product" method="post">
+        <div>
+            <label for="name">Nama Product :</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="brand">Brand Product: </label>
+            <input type="text" name="brand" id="brand">
+        </div>
+        <div>
+            <label for="price">Price Product: </label>
+            <input type="number" name="price" id="price">
+        </div>
+        <div>
+            <label for="color">Color Product: </label>
+            <input type="text" name="color" id="color">
+        </div>
+        <div>
+            <label for="size">Size Product: </label>
+                <select name="size" id="size" name="size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    </select>
+        </div>
+        <div>
+            <label for="stock">Stock Product: </label>
+            <input type="number" name="stock" id="stock">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        <a href="/product">Back</a>
+    </div>
+</body>
+</html>

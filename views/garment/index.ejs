@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Daftar Garment</h1>
+    <%= success %>
+    <ul>
+        <% for (garment of garments) { %>
+            <a href="/garment/<%= garment._id %>">
+                <li><%= garment.name %> - <%= garment.location %></li>
+            </a>
+        <% } %>
+    </ul>
+    <div>
+        <a href="/garment/create">Create Garment</a>
+    </div>
+</body>
+</html>

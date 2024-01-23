@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Produk <%= product.name %></h1>
+    <p>Brand: <%= product.brand %></p>
+    <p>Price: <%= product.price %></p>
+    <p>Color: <%= product.color %></p>
+    <p>Size: <a href="/product?size=<%= product.size %>"><%= product.size %></a></p>
+    <p>Stock: <%= product.stock %></p>
+
+    <h3>Parbik Produksi</h3>
+    <p><%= product.garment.name %></p>
+    <br>
+    <a href="/product/<%= product._id %>/edit">
+        Edit
+    </a>
+    <br>
+    <a href="/garment/<%= product.garment._id %>">Back</a>
+    <br>
+    <form action="/product/<%= product._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
